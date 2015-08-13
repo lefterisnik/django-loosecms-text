@@ -17,7 +17,5 @@ class TextManager(Plugin):
 
     utime = models.DateTimeField(auto_now=True)
 
-    published = models.BooleanField(_('published'), default=True)
-
     def __unicode__(self):
         return "%s (%s)" %(self.title, self.type)
