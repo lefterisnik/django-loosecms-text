@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
-from django.conf import settings
 from loosecms.models import Plugin
 from ckeditor.fields import RichTextField
 
@@ -13,7 +12,7 @@ class TextManager(Plugin):
                              help_text='Give some title.')
     body = RichTextField(_('body'))
 
-    ctime = models.DateTimeField(editable=False, auto_now_add=True)
+    ctime = models.DateTimeField(auto_now_add=True)
 
     utime = models.DateTimeField(auto_now=True)
 

@@ -16,6 +16,7 @@ class TextPlugin(PluginModelAdmin):
     template = "plugin/text.html"
     plugin = True
     extra_initial_help = None
+    fields = ('type', 'placeholder', 'title', 'body', 'published')
 
     def render(self, context, manager):
         t = loader.get_template(self.template)
