@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import ugettext_lazy as _
-from django.template import loader
 
 from .models import *
 from .forms import *
@@ -18,10 +17,9 @@ class TextPlugin(PluginModelAdmin):
     extra_initial_help = None
     fields = ('type', 'placeholder', 'title', 'body', 'published')
 
-    def render(self, context, manager):
-        t = loader.get_template(self.template)
+    def update_context(self, context, manager):
         context['text'] = manager
-        return t.render(context)
+        return context
 
     def get_changeform_initial_data(self, request):
         initial = {}
