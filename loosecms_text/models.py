@@ -2,15 +2,15 @@
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from loosecms.models import Plugin
-from ckeditor.fields import RichTextField
-
-import os
+from loosecms.fields import LoosecmsRichTextField
 
 
-class TextManager(Plugin):
+class Text(Plugin):
+    default_type = 'TextPlugin'
+
     title = models.CharField(_('title'), max_length=200,
                              help_text='Give some title.')
-    body = RichTextField(_('body'))
+    body = LoosecmsRichTextField(_('body'))
 
     ctime = models.DateTimeField(auto_now_add=True)
 

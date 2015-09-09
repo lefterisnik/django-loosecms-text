@@ -1,1 +1,3 @@
-#TODO: Add validation to exam if ckeditor is in INSTALLED_APPS
+# -*- coding: utf-8 -*-
+
+default_app_config = 'loosecms_text.apps.LooseCMSTextConfig'
