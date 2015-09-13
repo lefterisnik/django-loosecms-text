@@ -8,8 +8,6 @@ from loosecms.plugin_modeladmin import PluginModelAdmin
 
 
 class TextPlugin(PluginModelAdmin):
-    change_form_template = None
-    delete_confirmation_template = None
     model = Text
     name = _('Text')
     template = "plugin/text.html"
